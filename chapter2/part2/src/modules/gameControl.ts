@@ -11,7 +11,7 @@ export default class GameControl {
     constructor(runDirection: string = 'ArrowRight') {
 
         this.food = new Food();
-        this.scoreboard = new Scoreboard();
+        this.scoreboard = new Scoreboard(10, 2);
         this.snake = new Snake();
         this.runDirection = runDirection;
 
@@ -61,6 +61,7 @@ export default class GameControl {
             this.snake.y = y;
         } catch (e: any) {
             console.log(e.message + 'Game Over!');
+            alert(e.message + 'Game Over!');
             this.isLive = false;
         }
 
